@@ -1,4 +1,4 @@
-# Mesh
+# Simple decorator
 
 A simple sitemesh-like rack filter for Rails apps
 
@@ -8,12 +8,12 @@ This gem lets you specify a url to a place to fetch the layout for your applicat
 
 In your Gemfile
 
-    gem 'mesh', '0.0.1', git: 'git://github.com/Posten-konsernportal/Mesh.git'
+    gem 'simple_decorator', '0.0.1', git: 'git://github.com/Posten-konsernportal/simple_decorator.git'
 
 In any controller
     
     # usually you put this in your ApplicationController
     # but feel free to override in any other controller
-    def mesh_layout_url
+    def simple_decorator_url
       "some url to a velocity style decorator"
     end

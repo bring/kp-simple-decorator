@@ -1,17 +1,17 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "mesh/version"
+require "simple_decorator/version"
 
 Gem::Specification.new do |s|
-  s.name        = "mesh"
-  s.version     = Mesh::VERSION
+  s.name        = "simple_decorator"
+  s.version     = SimpleDecorator::VERSION
   s.authors     = ["Eirik Lied"]
   s.email       = ["eiriklied@gmail.com"]
-  s.homepage    = "https://github.com/Posten-Konsernportal"
+  s.homepage    = "https://github.com/Posten-Konsernportal/simple_decorator"
   s.summary     = %q{A ruby sitemesh-like implementation}
   s.description = %q{A simple gem to give sitemesh-like functionality in a rack app using decorators.}
 
-  s.rubyforge_project = "mesh"
+  s.rubyforge_project = "simple_decorator"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
