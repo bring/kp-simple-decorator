@@ -14,6 +14,6 @@ In any controller
     
     # usually you put this in your ApplicationController
     # but feel free to override in any other controller
-    def simple_decorator_url
+    def decorator_url
       "some url to a velocity style decorator"
     end

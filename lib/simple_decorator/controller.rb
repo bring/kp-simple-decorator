@@ -4,14 +4,14 @@ module SimpleDecorator
     extend ActiveSupport::Concern
 
     included do
-      after_filter :call_simple_decorator_url
+      after_filter :call_decorator_url
     end
 
     
-    def call_simple_decorator_url
-      return unless respond_to? :simple_decorator_url
+    def call_decorator_url
+      return unless respond_to? :decorator_url
 
-      request.env['simple_decorator.layout.url'] = simple_decorator_url
+      request.env['simple_decorator.layout.url'] = decorator_url
       
     end
   
