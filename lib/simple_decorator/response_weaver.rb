@@ -1,4 +1,3 @@
-# encoding utf-8
 class ResponseWeaver
   
   def initialize(decorator)
@@ -21,7 +20,6 @@ class ResponseWeaver
     
     #build a response string from the array
     ret = ''
-    p response_array
     response_array.each { |str| ret << str }
 
     #puts "time since init: #{Time.now - @init_time} "
