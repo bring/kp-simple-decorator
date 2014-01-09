@@ -1,5 +1,4 @@
 require 'rack-plastic'
-require 'open-uri'
 
 module SimpleDecorator
   module Filter
@@ -8,9 +7,10 @@ module SimpleDecorator
         return html unless request.env["simple_decorator.layout.url"]
         return html if request.xhr?
 
-        layout = request.env["simple_decorator.layout.url"]
+        layout_url = request.env["simple_decorator.layout.url"]
         
-        decorator = open(layout, :proxy => nil).read
+        decorator = Fetcher.new(:proxy => nil).fetch(layout_url)
+
         weaver = ResponseWeaver.new(decorator)
         weaver.apply(html)
       end
