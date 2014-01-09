@@ -1,3 +1,4 @@
+# encoding utf-8
 class ResponseWeaver
   
   def initialize(decorator)
