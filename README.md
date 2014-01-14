@@ -58,4 +58,8 @@ The response will now have the layout of your decorator, but display dynamic con
           <h1>My apps dynamic response</h1>
         </div>
       </body>
-    </html>    
+    </html>
+
+## Code status
+
+[![Code Climate](https://codeclimate.com/github/bring/kp-simple-decorator.png)](https://codeclimate.com/github/bring/kp-simple-decorator)
