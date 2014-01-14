@@ -4,8 +4,7 @@ module SimpleDecorator
   module Filter
     class Decorator < Rack::Plastic
       def change_html_string(html)
-        p request.env
-        return html unless request.env["simple_decorator.layout.url"] || request.env["HTTP_X_EACCESS_USERID"]
+        return html unless request.env["simple_decorator.layout.url"] || request.env["eaccess_user_id"]
         return html if request.xhr?
 
         layout_url = request.env["simple_decorator.layout.url"]
