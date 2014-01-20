@@ -10,7 +10,7 @@ class Fetcher
     uri = URI.parse(url)
     http = Net::HTTP.new(uri.host, uri.port, @opts[:proxy])
 
-    http.request(Net::HTTP::Get.new(uri.request_uri)).force_encoding('utf-8').encode('utf-8')
+    http.request(Net::HTTP::Get.new(uri.request_uri)).body.force_encoding('utf-8').encode('utf-8')
   end
 
 
