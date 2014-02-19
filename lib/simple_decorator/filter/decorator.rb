@@ -7,9 +7,9 @@ module SimpleDecorator
         return html unless request.env["simple_decorator.layout.url"]
         return html if request.xhr?
 
-        layout_url = request.env["simple_decorator.layout.url"]
+        url_or_hash = request.env["simple_decorator.layout.url"]
         
-        decorator = Fetcher.new(:proxy => nil).fetch(layout_url)
+        decorator = Fetcher.new(:proxy => nil).fetch(url_or_hash)
 
         weaver = ResponseWeaver.new(decorator)
         weaver.apply(html)
