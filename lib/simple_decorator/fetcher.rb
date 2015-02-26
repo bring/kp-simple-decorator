@@ -17,10 +17,11 @@ class Fetcher
 
     uri = URI.parse(url)
     http = Net::HTTP.new(uri.host, uri.port, @opts[:proxy])
+    http.use_ssl = true if uri.class == URI::HTTPS
 
     req = Net::HTTP::Get.new(uri.request_uri)
     headers.each { |name, val| req[name] = val }
-    
+
     http.request(req).body.force_encoding('utf-8').encode('utf-8')
   end
 
