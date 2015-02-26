@@ -45,6 +45,14 @@ In any controller
       "http://www.mysite.com/decorator"
     end
 
+    # or, if you have the need to set some headers while trying to call the decorator_url
+    def decorator_url
+      {
+        url:      "http://www.mysite.com/decorator"
+        headers:  { 'authorization' => "Bearer #{some token}" }
+      }
+    end
+
 
 The response will now have the layout of your decorator, but display dynamic contents from your app, including your stylesheets and javacripts
 
