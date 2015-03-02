@@ -12,61 +12,66 @@ In your Gemfile
 
 
 Create a decorator lets say at 'http://www.mysite.com/decorator' containing your site's layout:
-  
-    <html>
-      <head>
-        <title>$title - SiteName</title>
-        $head
-      </head>
-      <body>
-        <div class="somestyling">
-          $body
-        </div>
-      </body>
-    </html>
+```html
+<html>
+  <head>
+    <title>$title - SiteName</title>
+    $head
+  </head>
+  <body>
+    <div class="somestyling">
+      $body
+    </div>
+  </body>
+</html>
+```
 
 In your layout file (typically application.html.erb)
-
-    <html>
-      <head>
-        <title>My apps page</title>
-        <link rel="stylesheet" href="my_app_styles.css" type="text/css" media="screen" />
-      </head>
-      <body>
-        <h1>My apps dynamic response</h1>
-      </body>
-    </html>
+```html
+<html>
+  <head>
+    <title>My apps page</title>
+    <link rel="stylesheet" href="my_app_styles.css" type="text/css" media="screen" />
+  </head>
+  <body>
+    <h1>My apps dynamic response</h1>
+  </body>
+</html>
+```
 
 In any controller
-    
-    # usually you put this in your ApplicationController
-    # but feel free to override in any other controller
-    def decorator_url
-      "http://www.mysite.com/decorator"
-    end
 
-    # or, if you have the need to set some headers while trying to call the decorator_url
-    def decorator_url
-      {
-        url:      "http://www.mysite.com/decorator"
-        headers:  { 'authorization' => "Bearer #{some token}" }
-      }
-    end
+```ruby
+# usually you put this in your ApplicationController
+# but feel free to override in any other controller
+def decorator_url
+  "http://www.mysite.com/decorator"
+end
 
+# or, if you have the need to set some headers while trying to call the decorator_url
+def decorator_url
+  {
+    url:      "http://www.mysite.com/decorator"
+    headers:  { 'authorization' => "Bearer #{some token}" }
+  }
+end
+```
 
 The response will now have the layout of your decorator, but display dynamic contents from your app, including your stylesheets and javacripts
 
-    <html>
-      <head>
-        <title>My apps page - SiteName</title>
-        <link rel="stylesheet" href="my_app_styles.css" type="text/css" media="screen" />
-      </head>
-      <body>
-        <div class="somestyling">
-          <h1>My apps dynamic response</h1>
-        </div>
-      </body>
-    </html>
+```html
+<html>
+  <head>
+    <title>My apps page - SiteName</title>
+    <link rel="stylesheet" href="my_app_styles.css" type="text/css" media="screen" />
+  </head>
+  <body>
+    <div class="somestyling">
+      <h1>My apps dynamic response</h1>
+    </div>
+  </body>
+</html>
+```
 
 ## Code status
 
