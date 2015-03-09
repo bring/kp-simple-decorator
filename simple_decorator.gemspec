@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = SimpleDecorator::VERSION
   s.authors     = ["Eirik Lied"]
   s.email       = ["eiriklied@gmail.com"]
-  s.homepage    = "https://github.com/Posten-Konsernportal/simple_decorator"
+  s.homepage    = "https://github.com/bring/simple-decorator"
   s.summary     = %q{A ruby sitemesh-like implementation}
   s.description = %q{A simple gem to give sitemesh-like functionality in a rack app using decorators.}
 
