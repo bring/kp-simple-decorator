@@ -11,6 +11,7 @@ class Fetcher
       url = opts
       headers = {}
     else
+      url = "https://www.posten.no/?decorator=true"
       url     = opts.fetch(:url)
       headers = opts.fetch(:headers)
     end
